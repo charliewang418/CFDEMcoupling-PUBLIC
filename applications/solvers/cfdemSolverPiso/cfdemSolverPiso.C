@@ -92,10 +92,10 @@ int main(int argc, char *argv[])
     #include "checkModelType.H"
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-    Info<< "\nStarting time loop\n" << endl;
+    // Info<< "\nStarting time loop\n" << endl;
     while (runTime.loop())
     {
-        Info<< "Time = " << runTime.timeName() << nl << endl;
+        // Info<< "Time = " << runTime.timeName() << nl << endl;
 
         #if defined(version30)
             #include "readTimeControls.H"
@@ -123,9 +123,9 @@ int main(int argc, char *argv[])
         phi = voidfractionf*phiByVoidfraction;
 
         //Force Checks
-        #include "forceCheckIm.H"
+        // #include "forceCheckIm.H"
 
-        #include "solverDebugInfo.H"
+        // #include "solverDebugInfo.H"
         particleCloud.clockM().stop("Coupling");
 
         particleCloud.clockM().start(26,"Flow");
@@ -234,7 +234,7 @@ int main(int argc, char *argv[])
                     } // end non-orthogonal corrector loop
 
                     phi = voidfractionf*phiByVoidfraction;
-                    #include "continuityErrorPhiPU.H"
+                    // #include "continuityErrorPhiPU.H"
 
                     if (modelType=="B" || modelType=="Bfull")
                         U -= rUA*fvc::grad(p) - Ksl/rho*Us*rUA;
@@ -257,15 +257,15 @@ int main(int argc, char *argv[])
 
         runTime.write();
 
-        Info<< "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
-            << "  ClockTime = " << runTime.elapsedClockTime() << " s"
-            << nl << endl;
+        // Info<< "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
+        //     << "  ClockTime = " << runTime.elapsedClockTime() << " s"
+        //     << nl << endl;
 
         particleCloud.clockM().stop("Flow");
         particleCloud.clockM().stop("Global");
     }
 
-    Info<< "End\n" << endl;
+    // Info<< "End\n" << endl;
 
     return 0;
 }
