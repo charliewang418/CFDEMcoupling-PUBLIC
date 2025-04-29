@@ -772,7 +772,7 @@ bool Foam::cfdemCloud::evolve
         //CHECK JUST TIME-INTERPOATE ALREADY SMOOTHENED VOIDFRACTIONNEXT AND UsNEXT FIELD 
         //      IMPLICIT FORCE CONTRIBUTION AND SOLVER USE EXACTLY THE SAME AVERAGED
         //      QUANTITIES AT THE GRID!
-        Info << "\n timeStepFraction() = " << dataExchangeM().timeStepFraction() << endl;
+        // Info << "\n timeStepFraction() = " << dataExchangeM().timeStepFraction() << endl;
         if( dataExchangeM().timeStepFraction() > 1.001 || dataExchangeM().timeStepFraction() < -0.001 )
         {
             FatalError << "cfdemCloud::dataExchangeM().timeStepFraction() = "<< dataExchangeM().timeStepFraction() <<" must be >1 or <0 : This might be due to the fact that you used a adjustable CFD time step. Please use a fixed CFD time step." << abort(FatalError);
