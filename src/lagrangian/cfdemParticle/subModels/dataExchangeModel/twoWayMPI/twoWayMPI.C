@@ -66,7 +66,7 @@ twoWayMPI::twoWayMPI
     propsDict_(dict.subDict(typeName + "Props")),
     lmp(NULL)
 {
-    Info<<"Starting up LIGGGHTS for first time execution"<<endl;
+    // Info<<"Starting up LIGGGHTS for first time execution"<<endl;
 
     MPI_Comm_dup(MPI_COMM_WORLD, &comm_liggghts);
 
@@ -74,7 +74,7 @@ twoWayMPI::twoWayMPI
     const fileName liggghtsPath(propsDict_.lookup("liggghtsPath"));
 
     // open LIGGGHTS input script
-    Info<<"Executing input script '"<< liggghtsPath.c_str() <<"'"<<endl;
+    // Info<<"Executing input script '"<< liggghtsPath.c_str() <<"'"<<endl;
     lmp = new LAMMPS_NS::LAMMPS(0,NULL,comm_liggghts);
     lmp->input->file(liggghtsPath.c_str());
 
@@ -223,7 +223,7 @@ bool Foam::twoWayMPI::couple(int i) const
         // start liggghts
         {
             // run commands from liggghtsCommands dict
-            Info<<"Starting up LIGGGHTS" << endl;
+            // Info<<"Starting up LIGGGHTS" << endl;
             particleCloud_.clockM().start(3,"LIGGGHTS");
 
             // check if liggghtsCommandModels with exaxt timing are being run
@@ -265,9 +265,9 @@ bool Foam::twoWayMPI::couple(int i) const
                             DEMstepsToInterrupt[ind] -= DEMstepsToInterrupt[ind-1];
                     }                    
 
-                    Info << "Foam::twoWayMPI::couple(i): interruptTimes=" << interruptTimes << endl;
-                    Info << "Foam::twoWayMPI::couple(i): DEMstepsToInterrupt=" << DEMstepsToInterrupt << endl;
-                    Info << "Foam::twoWayMPI::couple(i): lcModel=" << lcModel << endl;
+                    // Info << "Foam::twoWayMPI::couple(i): interruptTimes=" << interruptTimes << endl;
+                    // Info << "Foam::twoWayMPI::couple(i): DEMstepsToInterrupt=" << DEMstepsToInterrupt << endl;
+                    // Info << "Foam::twoWayMPI::couple(i): lcModel=" << lcModel << endl;
                 }
 
                 if(particleCloud_.liggghtsCommand()[i]().type()=="runLiggghts")
@@ -289,7 +289,7 @@ bool Foam::twoWayMPI::couple(int i) const
                     DEMstepsRun += DEMstepsToInterrupt[j];          
                     particleCloud_.liggghtsCommand()[runComNr]().set(DEMstepsToInterrupt[j]);
                     const char* command = particleCloud_.liggghtsCommand()[runComNr]().command(0);
-                    Info << "Executing run command: '"<< command <<"'"<< endl;
+                    // Info << "Executing run command: '"<< command <<"'"<< endl;
                     lmp->input->one(command);
     
                     // run liggghts command with exact timing
@@ -303,7 +303,7 @@ bool Foam::twoWayMPI::couple(int i) const
                 {
                     particleCloud_.liggghtsCommand()[runComNr]().set(couplingInterval() - DEMstepsRun);
                     const char* command = particleCloud_.liggghtsCommand()[runComNr]().command(0);
-                    Info << "Executing run command: '"<< command <<"'"<< endl;
+                    // Info << "Executing run command: '"<< command <<"'"<< endl;
                     lmp->input->one(command);
                 }
 
