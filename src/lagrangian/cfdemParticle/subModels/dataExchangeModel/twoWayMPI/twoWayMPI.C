@@ -345,7 +345,7 @@ bool Foam::twoWayMPI::couple(int i) const
             }
 
             particleCloud_.clockM().stop("LIGGGHTS");
-            Info<<"LIGGGHTS finished"<<endl;
+            // Info<<"LIGGGHTS finished"<<endl;
         }
 
         // give nr of particles to cloud
