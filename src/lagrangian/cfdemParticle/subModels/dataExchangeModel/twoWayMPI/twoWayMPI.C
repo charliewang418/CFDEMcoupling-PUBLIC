@@ -294,7 +294,7 @@ bool Foam::twoWayMPI::couple(int i) const
     
                     // run liggghts command with exact timing
                     command = particleCloud_.liggghtsCommand()[lcModel[j]]().command(0);
-                    Info << "Executing command: '"<< command <<"'"<< endl;
+                    // Info << "Executing command: '"<< command <<"'"<< endl;
                     lmp->input->one(command);
                 }
 
@@ -320,7 +320,7 @@ bool Foam::twoWayMPI::couple(int i) const
                         for(int j=0;j<commandLines;j++)
                         {
                             const char* command = particleCloud_.liggghtsCommand()[i]().command(j);
-                            Info << "Executing command: '"<< command <<"'"<< endl;
+                            // Info << "Executing command: '"<< command <<"'"<< endl;
                             lmp->input->one(command);
                         }
                     }
@@ -337,7 +337,7 @@ bool Foam::twoWayMPI::couple(int i) const
                         for(int j=0;j<commandLines;j++)
                         {
                             const char* command = particleCloud_.liggghtsCommand()[i]().command(j);
-                            Info << "Executing command: '"<< command <<"'"<< endl;
+                            // Info << "Executing command: '"<< command <<"'"<< endl;
                             lmp->input->one(command);
                         }
                     }
