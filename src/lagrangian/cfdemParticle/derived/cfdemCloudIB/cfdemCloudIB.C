@@ -168,7 +168,7 @@ bool Foam::cfdemCloudIB::evolve
     if(!writeTimePassed_ && mesh_.time().outputTime()) writeTimePassed_=true;
     if (dataExchangeM().doCoupleNow())
     {
-        Info << "\n timeStepFraction() = " << dataExchangeM().timeStepFraction() << endl;
+        // Info << "\n timeStepFraction() = " << dataExchangeM().timeStepFraction() << endl;
         dataExchangeM().couple(0);
         doCouple=true;
 
