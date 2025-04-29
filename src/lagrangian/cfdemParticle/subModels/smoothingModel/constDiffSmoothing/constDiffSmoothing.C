@@ -128,9 +128,9 @@ void Foam::constDiffSmoothing::smoothen(volScalarField& fieldSrc) const
 
     if(verbose_)
     {
-        Info << "min/max(fieldoldTime) (unsmoothed): " << min(sSmoothField.oldTime()) << tab << max(sSmoothField.oldTime()) << endl;
-        Info << "min/max(fieldSrc): " << min(fieldSrc) << tab << max(fieldSrc) << endl;
-        Info << "min/max(fieldSrc.oldTime): " << min(fieldSrc.oldTime()) << tab << max(fieldSrc.oldTime()) << endl;
+        // Info << "min/max(fieldoldTime) (unsmoothed): " << min(sSmoothField.oldTime()) << tab << max(sSmoothField.oldTime()) << endl;
+        // Info << "min/max(fieldSrc): " << min(fieldSrc) << tab << max(fieldSrc) << endl;
+        // Info << "min/max(fieldSrc.oldTime): " << min(fieldSrc.oldTime()) << tab << max(fieldSrc.oldTime()) << endl;
     }
 
 }
@@ -163,9 +163,9 @@ void Foam::constDiffSmoothing::smoothen(volVectorField& fieldSrc) const
 
     if(verbose_)
     {
-        Info << "min/max(fieldoldTime) (unsmoothed): " << min(vSmoothField.oldTime()) << tab << max(vSmoothField.oldTime()) << endl;
-        Info << "min/max(fieldSrc): " << min(fieldSrc) << tab << max(fieldSrc) << endl;
-        Info << "min/max(fieldSrc.oldTime): " << min(fieldSrc.oldTime()) << tab << max(fieldSrc.oldTime()) << endl;
+        // Info << "min/max(fieldoldTime) (unsmoothed): " << min(vSmoothField.oldTime()) << tab << max(vSmoothField.oldTime()) << endl;
+        // Info << "min/max(fieldSrc): " << min(fieldSrc) << tab << max(fieldSrc) << endl;
+        // Info << "min/max(fieldSrc.oldTime): " << min(fieldSrc.oldTime()) << tab << max(fieldSrc.oldTime()) << endl;
     }
 }
 
@@ -226,9 +226,9 @@ void Foam::constDiffSmoothing::smoothenReferenceField(volVectorField& fieldSrc) 
 
     if(verbose_)
     {
-        Info << "min/max(fieldoldTime) (unsmoothed): " << min(vSmoothField.oldTime()) << tab << max(vSmoothField.oldTime()) << endl;
-        Info << "min/max(fieldSrc): " << min(fieldSrc) << tab << max(fieldSrc) << endl;
-        Info << "min/max(fieldSrc.oldTime): " << min(fieldSrc.oldTime()) << tab << max(fieldSrc.oldTime()) << endl;
+        // Info << "min/max(fieldoldTime) (unsmoothed): " << min(vSmoothField.oldTime()) << tab << max(vSmoothField.oldTime()) << endl;
+        // Info << "min/max(fieldSrc): " << min(fieldSrc) << tab << max(fieldSrc) << endl;
+        // Info << "min/max(fieldSrc.oldTime): " << min(fieldSrc.oldTime()) << tab << max(fieldSrc.oldTime()) << endl;
     }
 
 }
